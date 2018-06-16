@@ -8,11 +8,14 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { UsersPage } from '../pages/users/users';
 import { DgiiPage } from '../pages/dgii/dgii';
+import { PokeApiPage } from '../pages/poke-api/poke-api';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { DgiiServiceProvider } from '../providers/dgii-service/dgii-service';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { DgiiServiceProvider } from '../providers/dgii-service/dgii-service';
     HomePage,
     ListPage,
     UsersPage,
-    DgiiPage
+    DgiiPage,
+    PokeApiPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { DgiiServiceProvider } from '../providers/dgii-service/dgii-service';
     HomePage,
     ListPage,
     UsersPage,
-    DgiiPage
+    DgiiPage,
+    PokeApiPage
   ],
   providers: [
     StatusBar,

@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { UsersPage } from '../pages/users/users';
 import { DgiiPage } from '../pages/dgii/dgii';
+import {PokeApiPage} from '../pages/poke-api/poke-api'
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Users', component: UsersPage },
-      { title: 'DGII', component: DgiiPage }
+      { title: 'DGII', component: DgiiPage },
+      { title: 'PokeApi', component: PokeApiPage }
     ];
 
   }
