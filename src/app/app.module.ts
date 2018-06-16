@@ -15,6 +15,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { UserServiceProvider } from '../providers/user-service/user-service';
 import { DgiiServiceProvider } from '../providers/dgii-service/dgii-service';
+import { PokeApiServiceProvider } from '../providers/poke-api-service/poke-api-service';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { DgiiServiceProvider } from '../providers/dgii-service/dgii-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider,
-    DgiiServiceProvider
+    DgiiServiceProvider,
+    PokeApiServiceProvider
   ]
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PokeApiServiceProvider } from '../../providers/poke-api-service/poke-api-service';
 
 /**
  * Generated class for the PokeApiPage page.
@@ -15,11 +16,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PokeApiPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public pokeService: PokeApiServiceProvider) {
+  }
+
+  pokemons: {
+    name?: string;
+    sprites?: string[];
+  }[] = [];
+  
+
+  getPokemons(pokemonsCount = 5) {
+    this.pokemons = [];
+    for (let index = 1; index <= pokemonsCount; index++) {
+      this.pokeService.getPokemonsData(index.toString()).subscribe(
+        (data) => {
+          this.pokemons.push(data);
+        },
+        (error) => {
+          console.error(error);
+        }
+      )
+    }
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PokeApiPage');
+    this.getPokemons();
   }
-
 }

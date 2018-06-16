@@ -5,8 +5,10 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Poke API</ion-title>
   </ion-navbar>
 
@@ -14,5 +16,28 @@
 
 
 <ion-content padding>
+  <h2 text-center>List of Pokemons</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label>How many pokemons?</ion-label>
+      <ion-select>
+        <ion-option value="5" (ionSelect)="getPokemons(5)" selected="true">5</ion-option>
+        <ion-option value="10" (ionSelect)="getPokemons(10)">10</ion-option>
+        <ion-option value="20" (ionSelect)="getPokemons(20)">20</ion-option>
+        <ion-option value="50" (ionSelect)="getPokemons(50)">50</ion-option>
+        <ion-option value="100" (ionSelect)="getPokemons(100)">100</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item *ngFor="let item of pokemons">
+      <ion-thumbnail item-start>
+        <!-- <img src="img/thumbnail-totoro.png"> -->
+        <img [src]="item.sprites.front_default">
+      </ion-thumbnail>
+      <h2 text-capitalize>{{item.name}}</h2>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
